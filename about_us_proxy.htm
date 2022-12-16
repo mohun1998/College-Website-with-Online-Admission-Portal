@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <title>
+   Welcome to College of Computer & Communication, Jabalpur
+  </title>
+  <link rel="icon" href="assets/favicon.ico" type="icon" sizes="16x16">
+  <link rel="stylesheet" href="fonts.css" media="print" onload="this.media='all'; this.onload=null;">
+  <link rel="stylesheet" type="text/css" href="ui.css">
+  <style>
+    body {
+      font-family: myFont;
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" />
+  <link rel="apple-touch-icon" href="images/icons/icon-96x96.png" />
+  <link rel="apple-touch-icon" href="images/icons/icon-128x128.png" />
+  <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" />
+  <link rel="apple-touch-icon" href="images/icons/icon-152x152.png" />
+  <link rel="apple-touch-icon" href="images/icons/icon-192x192.png" />
+  <link rel="apple-touch-icon" href="images/icons/icon-384x384.png" />
+  <link rel="apple-touch-icon" href="images/icons/icon-512x512.png" />
+  <meta name="apple-mobile-web-app-status-bar" content="#ffffff" />
+  <meta name="theme-color" content="#ffffff" />
+  <script type="text/javascript">
+    ; (function () {
+        function id(v) { return document.getElementById(v); }
+        function loadbar() {
+            var ovrl = id("overlay"),
+        prog = id("progress"),
+        stat = id("progstat"),
+        img = document.images,
+        c = 0;
+            tot = img.length;
+
+            function imgLoaded() {
+                c += 1;
+                var perc = ((100 / tot * c) << 0) + "%";
+                prog.style.width = perc;
+                
+                if (c === tot) return doneLoading();
+            }
+            function doneLoading() {
+                ovrl.style.opacity = 0;
+                setTimeout(function () {
+                    ovrl.style.display = "none";
+                }, 1200);
+            }
+            for (var i = 0; i < tot; i++) {
+                var tImg = new Image();
+                tImg.onload = imgLoaded;
+                tImg.onerror = imgLoaded;
+                tImg.src = img[i].src;
+            }
+        }
+        document.addEventListener('DOMContentLoaded', loadbar, false);
+    } ());
+  </script>
+  <style>
+.splash_spacer {
+  width:800px;
+  border:0px solid red;
+  height:10px;
+  position:relative;
+  top:375px;
+}
+
+#overlay {
+  position:fixed;
+  z-index:99999;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  background-color:#ffffff;
+  transition: 0.4s 0.4s;
+}
+
+#progress {
+  height:7px;
+  background-color:#294D8B;
+  transition:0.4s ease-in-out;
+  width:0;
+  border-radius:50px;
+  float:left;
+}
+
+.loading {
+  background-color:#E6E8E9;
+  border-radius:50px;
+  height:7px;
+  width:790px;
+}
+
+#progstat {
+  font-family:myFont;
+  font-size:16px;
+  float:right;
+  position:relative;
+  top:15px;
+  right:5px;
+  transition:0.4s ease-in-out;
+  color:#BE3B3B;
+}
+
+.logo_splash {
+  height:210px;
+  position:relative;
+  top:200px;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 800px) {
+  .logo_splash {
+    height:170px;
+    top:225px;
+  }
+  .splash_spacer {
+    top:438px;
+    width:100%;
+    padding:15px;
+  }
+  .loading {
+    width:100%;
+  }
+}
+  </style>
+  <script src="assets/jquery.min.js"></script>
+
+ </head>
+ <body oncontextmenu="return false" style="margin:0px">
+
+ <div id="button_bar_placeholder">
+ <center>
+  <div class="button_bar_placeholder_d">
+    <div class="button1_placeholder"></div>
+    <div class="button2_placeholder"></div>
+    <div class="button3_placeholder"></div>
+    <div class="button4_placeholder"></div> 
+    <div class="button6_placeholder"></div>
+    <div class="button7_placeholder"></div>
+    <div class="button8_placeholder"></div>
+    <div class="button9_placeholder"></div>
+  <div>
+ </center>
+ <center>
+  <div class="button_bar_placeholder_m">
+    <div class="buttonm_main_placeholder"></div>
+    <div class="buttoncall_placeholder"></div>
+    <div class="buttonadm_placeholder"></div>
+  <div>
+ </center>
+ </div>
+
+<div class="iframe_resizer">
+
+  <iframe id="miframe" src="about_us.htm">
+    Sorry... Your Browser does not support CCC App, Kindly download Google Chrome, Microsoft Edge, Mozilla FireFox, Safari, Opera, etc.
+  </iframe>
+
+</div>
+
+<script>
+    $("#miframe").on('load',function() {
+        document.title = document.getElementById("miframe").contentDocument.title;
+    });
+</script>
+
+  <div id="titlebar">
+
+    <div class="all_logo_container">
+
+      <div class="logo_container">
+        <img class="logo" src="images/logo2.svg">
+      </div>
+
+      <div class="logo_text_container">
+        <img class="logo_text" src="images/logo_text2.svg">
+        <div class="title_address">Jabalpur, Madhya Pradesh</div>
+      </div>
+
+
+    </div>
+
+   <div class="social_media_container">
+
+    <div class="social_container">
+
+    <a href="whatsapp.html">
+      <button class="whatsapp">
+        <div class="whatsapp_text">
+          <img src="images/apps_whatsapp.png" style="vertical-align:middle;width:36px;display: inline-block;">
+          <font style="position:relative;top:2px;">&nbsp&nbsp&nbspChat with us on WhatsApp</font>
+        </div>
+      </button>
+    </a>
+
+    <a href="facebook.html">
+      <button class="facebook">
+        <div class="facebook_text">
+          <img src="images/apps_facebook.png" style="vertical-align:middle;width:36px;display: inline-block;">
+          <font style="position:relative;top:2px;">&nbsp&nbsp&nbspConnect us on Facebook</font>
+        </div>
+      </button>
+    </a>
+
+    <a href="youtube.html">
+      <button class="youtube">
+        <div class="youtube_text">
+          <img src="images/apps_youtube.png" style="vertical-align:middle;width:36px;display: inline-block;">
+          <font style="position:relative;top:1px;">&nbsp&nbsp&nbspConnect us on YouTube</font>
+        </div>
+      </button>
+    </a> 
+
+    <a href="#">
+      <button class="linkedin">
+        <div class="linkedin_text">
+          <img src="images/apps_linkedin.png" style="vertical-align:middle;width:36px;display: inline-block;">
+          <font style="position:relative;top:2px;">&nbsp&nbsp&nbspConnect us on LinkedIn</font>
+        </div>
+      </button>
+    </a>
+
+    <a href="#">
+      <button class="twitter">
+        <div class="twitter_text">
+          <img src="images/apps_twitter.png" style="vertical-align:middle;width:36px;display: inline-block;">
+          <font style="position:relative;top:2px;">&nbsp&nbsp&nbspConnect us on Twitter</font>
+        </div>
+      </button>
+    </a>
+
+    </div>
+
+   </div>
+   
+   <div class="title_button">
+
+    <a href="tel:+917614218797"><button class="button_call"><div class="phone_icon"></div><div style="border:0px solid blue;width:265px;text-align:left;margin:1px 0px 0px 0px;" class="call_button_text">&nbsp&nbsp&nbsp&nbspCall us now&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp0761-42187-97/98</div></button></a>
+
+    <button class="admission" onclick="document.getElementById('miframe').src='admission.htm'">
+      <div class="adm_text">
+        <div class="adm_txt">Admissions Open</div>
+        <div class="form_icon"></div>
+        <div class="adm_txt2">Apply Now</div>
+      </div>
+    </button>
+    
+   </div>
+
+  </div>
+
+  
+
+ <div id="overlay">
+  <center>
+   <img src="images/logo_splash2.png" class="logo_splash">
+   <div class="splash_spacer"><div class="loading"><div id="progress"></div></div></div>
+  </center>
+ </div>
+
+ <script src="js/index.js"></script>
+
+ </body>
+</html>

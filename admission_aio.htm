@@ -1,0 +1,1850 @@
+<html>
+ <head>
+  <title>
+   Online Admission - College of Computer & Communication, Jabalpur
+  </title>
+  <script src="assets/jquery.min.js"></script>
+  <link rel="stylesheet" href="fonts.css" media="print" onload="this.media='all'; this.onload=null;">
+  <link rel="stylesheet" type="text/css" href="ui.css">
+  <link rel="stylesheet" type="text/css" href="ui2.css">
+  <style>
+    body {
+      font-family: myFont;
+    }
+    #adm_dob_date::-webkit-scrollbar-track {
+            background-color: #e8e8e8;
+            border-left:0px solid #c0c0c0;
+            margin:7px 10px 7px 0px;
+            border-radius: 50px;
+        }
+ 
+        #adm_dob_date::-webkit-scrollbar-thumb {
+            background-color: #1d4c9e;
+            border:1.5px solid #133674;
+            border-radius:50px;
+            transition: 0.2s ease;
+        }
+
+        #adm_dob_date::-webkit-scrollbar-thumb:hover {
+            background-color: #2861c5;
+            border:1.5px solid #133674;
+        }
+        #adm_dob_month::-webkit-scrollbar-track {
+            background-color: #e8e8e8;
+            border-left:0px solid #c0c0c0;
+            margin:7px 10px 7px 0px;
+            border-radius: 50px;
+        }
+ 
+        #adm_dob_month::-webkit-scrollbar-thumb {
+            background-color: #1d4c9e;
+            border:1.5px solid #133674;
+            border-radius:50px;
+            transition: 0.2s ease;
+        }
+
+        #adm_dob_month::-webkit-scrollbar-thumb:hover {
+            background-color: #2861c5;
+            border:1.5px solid #133674;
+        }
+        #adm_dob_year::-webkit-scrollbar-track {
+            background-color: #e8e8e8;
+            border-left:0px solid #c0c0c0;
+            margin:7px 10px 7px 0px;
+            border-radius: 50px;
+        }
+ 
+        #adm_dob_year::-webkit-scrollbar-thumb {
+            background-color: #1d4c9e;
+            border:1.5px solid #133674;
+            border-radius:50px;
+            transition: 0.2s ease;
+        }
+
+        #adm_dob_year::-webkit-scrollbar-thumb:hover {
+            background-color: #2861c5;
+            border:1.5px solid #133674;
+        }
+        #state_option_indian_container::-webkit-scrollbar-track {
+            background-color: #e8e8e8;
+            border-left:0px solid #c0c0c0;
+            margin:7px 10px 7px 0px;
+            border-radius: 50px;
+        }
+ 
+        #state_option_indian_container::-webkit-scrollbar-thumb {
+            background-color: #1d4c9e;
+            border:1.5px solid #133674;
+            border-radius:50px;
+            transition: 0.2s ease;
+        }
+
+        #state_option_indian_container::-webkit-scrollbar-thumb:hover {
+            background-color: #2861c5;
+            border:1.5px solid #133674;
+        }
+        #city_option_indian_container::-webkit-scrollbar-track {
+            background-color: #e8e8e8;
+            border-left:0px solid #c0c0c0;
+            margin:7px 10px 7px 0px;
+            border-radius: 50px;
+        }
+ 
+        #city_option_indian_container::-webkit-scrollbar-thumb {
+            background-color: #1d4c9e;
+            border:1.5px solid #133674;
+            border-radius:50px;
+            transition: 0.2s ease;
+        }
+
+        #city_option_indian_container::-webkit-scrollbar-thumb:hover {
+            background-color: #2861c5;
+            border:1.5px solid #133674;
+        }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff" />
+  <script type="text/javascript">
+    ; (function () {
+        function id(v) { return document.getElementById(v); }
+        function loadbar() {
+          var ovrl = id("overlay"),
+        prog = id("progress"),
+        stat = id("progstat"),
+        img = document.images,
+        c = 0;
+            tot = img.length;
+
+            function imgLoaded() {
+                c += 1;
+                var perc = ((100 / tot * c) << 0) + "%";
+                prog.style.width = perc;
+                
+                if (c === tot) return doneLoading();
+            }
+            function doneLoading() {
+                ovrl.style.opacity = 0;
+                setTimeout(function () {
+                    ovrl.style.display = "none";
+                }, 1200);
+            }
+            for (var i = 0; i < tot; i++) {
+                var tImg = new Image();
+                tImg.onload = imgLoaded;
+                tImg.onerror = imgLoaded;
+                tImg.src = img[i].src;
+            }
+        }
+        document.addEventListener('DOMContentLoaded', loadbar, false);
+    } ());
+  </script>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+  <script>
+    $(document).ready(function(){
+        $("#psp_ins_close").click(function(){
+           $("#psp_desc_bg").hide();
+           $("#psp_ins_close").hide(1900);
+        });
+        $("#psp_ins").click(function(){
+          $("#psp_ins_close").show();
+          $("#psp_desc_bg").show();
+          $("#psp_instructions").show();
+        });
+        $("#psp_ins2").click(function(){
+          $("#psp_ins_close").show();
+          $("#psp_desc_bg").show();
+          $("#psp_instructions").show();
+        });
+    });
+  </script>
+  <script>
+    $(document).ready(function(){
+        $("#upload_ins_close").click(function(){
+           $("#desc_bg").hide();
+           $("#upload_ins_close").hide(1900);
+        });
+        $("#upload_ins").click(function(){
+          $("#upload_ins_close").show();
+          $("#desc_bg").show();
+          $("#upload_instructions").show();
+        });
+        $("#upload_ins2").click(function(){
+          $("#upload_ins_close").show();
+          $("#desc_bg").show();
+          $("#upload_instructions").show();
+        });
+        $("#upload_ins3").click(function(){
+          $("#upload_ins_close").show();
+          $("#desc_bg").show();
+          $("#upload_instructions").show();
+        });
+        $("#upload_ins4").click(function(){
+          $("#upload_ins_close").show();
+          $("#desc_bg").show();
+          $("#upload_instructions").show();
+        });
+    });
+  </script>
+ </head>
+<body oncontextmenu="return false" style="background-color: #f0f0f0;">
+
+<div class="adm_step_progress_bar_track" id="adm_progress_track">
+
+  <div class="adm_pb1_filler" id="adm_progress_bar"></div>
+
+  <div class="adm_progress_bar1">
+    <div class="adm_pb_label_container">
+      <div style="width:40px;border:0px solid red;display: flex; justify-content: center;"><div class="adm_step_icon"><img src="images/adm_course_icon_active.png"></div></div>
+      <div class="adm_pblabel_active">Select Course</div>
+    </div>
+  </div>
+
+  <div class="adm_progress_separator1"></div>
+
+  <div class="adm_progress_bar2">
+    <div class="adm_pb_label_container">
+      <div style="width:40px;border:0px solid red;display: flex; justify-content: center;"><div class="adm_step_icon"><img src="images/adm_form_icon.png" id="step_2_icon"></div></div>
+      <div class="adm_pblabel" id="step_2_label">Fill Details</div>
+    </div>
+  </div>
+
+  <div class="adm_progress_separator2"></div>
+
+  <div class="adm_progress_bar3">
+    <div class="adm_pb_label_container">
+      <div style="width:40px;border:0px solid red;display: flex; justify-content: center;"><div class="adm_step_icon"><img src="images/adm_upload_icon.png" id="step_3_icon"></div></div>
+      <div class="adm_pblabel" id="step_3_label">Upload Documents</div>
+    </div>
+  </div>
+
+  <div class="adm_progress_separator3"></div>
+
+  <div class="adm_progress_bar4">
+    <div class="adm_pb_label_container">
+      <div style="width:40px;border:0px solid red;display: flex; justify-content: center;"><div class="adm_step_icon"><img src="images/adm_declare_icon.png" id="step_4_icon"></div></div>
+      <div class="adm_pblabel" id="step_4_label">Review & Payment</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="scroll_container" id="scrollContainer" style="position:relative;z-index:0;background-color: transparent;">
+  <center>
+
+    <div id="adm_step1" class="adm_step1">
+
+      <div class="resizer_container_full">
+        <div class="adm_course_heading">
+          <div class="heading">Online Admission</div>
+          <div class="adm_spacer" style="text-align: center;">
+            Choose a Course to begin with...
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="resizer_container_float">
+
+
+        <div class="adm_course">
+
+          <div class="adm_courses1">
+            <div class="adm_course_container">
+              <div class="heading3">BCA</div>
+              <div class="spacer">
+                Name of Course: Bachelors in Computer Application<br>
+                Number of seats: 150<br>
+                Duration: 3 Years full time<br>
+                Eligibility: 10+2 (Any Subject)<br>
+              </div>
+            </div>
+            <div class="adm_blur_container">
+              <div class="adm_courses_blur">
+                <button class="adm_apply_now" id="adm_bca">
+                  <div class="form_icon"></div>Apply Now
+                </button>
+              </div>
+            </div>
+          </div>
+        
+          <div class="adm_courses2">
+            <div class="adm_course_container">
+              <div class="heading3">M.Sc (CS)</div>
+              <div class="spacer">
+                Name of Course: Masters in Computer Science<br>
+                Duration: 2 Years full time<br>
+                Eligibility: Graduation (Any Subject)<br>
+                <i>*PGDCA Students can get admission directly in 3rd semester.</i><br>
+              </div>
+            </div>
+            <div class="adm_blur_container">
+              <div class="adm_courses_blur">
+                <button class="adm_apply_now" id="adm_msc">
+                  <div class="form_icon"></div>Apply Now
+                </button>
+              </div>
+            </div>
+          </div>
+        
+          <div class="adm_courses1">
+            <div class="adm_course_container">
+              <div class="heading3">DCA</div>
+              <div class="spacer">
+                Name of Course: Diploma in Computer Application<br>
+                Duration: 1 Year full time<br>
+                Eligibility: 10+2 (Any Subject)<br>
+              </div>
+            </div>
+            <div class="adm_blur_container">
+              <div class="adm_courses_blur">
+                <button class="adm_apply_now" id="adm_dca">
+                  <div class="form_icon"></div>Apply Now
+                </button>
+              </div>
+            </div>
+          </div>
+        
+          <div class="adm_courses2">
+            <div class="adm_course_container">
+              <div class="heading3">PGDCA</div>
+              <div class="spacer">
+                Name of Course: Post Graduate Diploma in Computer Application<br>
+                Duration: 1 Year full time<br>
+                Eligibility: Graduation (Any Subject)<br>
+              </div>
+            </div>
+            <div class="adm_blur_container">
+              <div class="adm_courses_blur">
+                <button class="adm_apply_now" id="adm_pgdca">
+                  <div class="form_icon"></div>Apply Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="adm_courses1">
+            <div class="adm_course_container">
+              <div class="heading3">BBA (APR)</div>
+              <div class="spacer">
+                Name of Course: Bachelors in Business Administration of ADVERTISING AND PUBLIC RELATIONS<br>
+                Duration: 3 Years full time<br>
+                Eligibility: 10+2 (Any Subject)<br>
+              </div>
+            </div>
+            <div class="adm_blur_container">
+              <div class="adm_courses_blur">
+                <button class="adm_apply_now" id="adm_bba1">
+                  <div class="form_icon"></div>Apply Now
+                </button>
+              </div>
+            </div>
+          </div>
+        
+          <div class="adm_courses2">
+            <div class="adm_course_container">
+              <div class="heading3">BBA (MC)</div>
+              <div class="spacer">
+                Name of Course: Bachelors in Business Administration of MASS COMMUNICATION<br>
+                Duration: 3 Years full time<br>
+                Eligibility: 10+2 (Any Subject)<br>
+              </div>
+            </div>
+            <div class="adm_blur_container">
+              <div class="adm_courses_blur">
+                <button class="adm_apply_now" id="adm_bba2">
+                  <div class="form_icon"></div>Apply Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="adm_courses1" style="margin-bottom: 60px;">
+            <div class="adm_course_container">
+              <div class="heading3">B.Sc (EM)</div>
+                <div class="spacer">
+                Name of Course: Bachelors in Science of Electronic Media <br>
+                Duration: 3 Years full time<br>
+                Eligibility: 10+2 (Any Subject)<br>
+              </div>
+            </div>
+            <div class="adm_blur_container">
+              <div class="adm_courses_blur">
+                <button class="adm_apply_now" id="adm_bsc">
+                  <div class="form_icon"></div>Apply Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+
+      <div class="end_credits">
+        <div class="quick_links">
+        <font style="font-size:20px;color:#27426E;">Quick Links</font>
+        <br><br><a href="http://cccjbp.in/courses.php"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspDirectorate of Institutional Finance</a>
+        <br><a href="http://cccjbp.in/index.php"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspRagging Instructions</a>
+        <br><a href="http://cccjbp.in/index.php"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspNational Holidays Calendar</a>
+        <br><a href="http://cccjbp.in/index.php#"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspDownload Alumni Form</a>
+        </div>
+        <div class="end_partition2">
+        <div class="time_table">
+          <font style="font-size:20px;color:#27426E;">Time Table</font>
+          <br><br><a href="http://cccjbp.in/index.php#"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspTime-Table Session June 2021</a>
+          <br><a href="http://cccjbp.in/index.php#"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspMain Examination Time-Table</a>
+        </div><br><br>
+        <div class="radio_ad">
+          <font style="font-size:20px;color:#27426E;">CCC Radio Ad</font>
+          <br><br>
+          <audio style="width:290px;outline:transparent;" controls>
+          <source src="assets/radio_ad.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        </div>
+        <div class="contact_us">
+        <font style="font-size:20px;color:#27426E;">Contact Us</font>
+        <br><br><b>Telephone:</b><br>0761-42187-95/96
+        <br><br><b>Email:</b><br> info@cccjbp.in
+        <br><br><b>Address:</b><br> College of Computers & Communication<br>1101, Near Shastri Bridge, Napier Town<br>Jabalpur, Madhya Pradesh - 482001
+        </div>
+
+        <center><div class="copyright_container">
+          <div class="copyright"><div style="width:100%;">
+        © Copyright 2021 Made by Mohit Nandgirikar & Dharmi Barman, BCA VI Sem
+        <div class="cv_container">
+            <img src="images/account_icon.png">
+            <div id="CounterVisitor">
+                <span class="counter-item">0</span>
+                <span class="counter-item">0</span>
+                <span class="counter-item">1</span>
+                <span class="counter-item">1</span>
+                <span class="counter-item">8</span>
+                <span class="counter-item">4</span>
+              </div>
+              <div class="tooltip">This&nbspmuch&nbsppeople&nbspviewed&nbspCCC&nbspwebsite.</div>
+        </div>
+
+
+        </div></div>
+        </center>
+
+      </div>
+
+
+    </div>
+
+  </center>
+
+
+  <center>
+
+    <div id="adm_step2" class="adm_step2 hidden">
+
+      <div class="resizer_container_full">
+        <div class="adm_course_heading">
+          <div class="heading" id="adm_step2_heading">Admission Form</div>
+          <div class="adm_spacer" style="text-align: center;font-size: 16px;border:0px solid red;">
+            <i>Please note, This is an Application to the Admission Form.<br> Admission process is done Offline. And the candidate have to pay&nbsp&nbsp &#8377 200/-&nbsp as Admission Form Fee.
+            <br><br><div style="position:absolute;right: 20px; color:#989898;font-size: 15px;">* Mandatory fields</div></i>
+          </div>
+        </div>
+      </div>
+
+        <div class="resizer_container_float">
+
+          <div class="adm_photo_container">
+            <div class="adm_photo">
+              <div class="adm_psp_upload" id="adm_psp_upload">
+                <div class="uploadbtn_container">
+                  <button onclick="UploadBtnDialog()" class="upload" id="psp_upload"><div class="upload_icon"></div><div class="upload_txt">Upload</div></button>
+                </div>
+                <br><a id="psp_ins" style="cursor: pointer;">Instructions</a>
+              </div>
+
+              <div class="adm_psp_container">
+                <div id="adm_psp_img" class="adm_psp hidden">
+                  <img src="" id="output">
+                  <div class="adm_psp_change hidden" id="adm_psp_change">
+                    <div class="uploadbtn_container">
+                      <button onclick="UploadBtnDialog()" class="upload" id="psp_upload"><div class="change_icon"></div><div class="upload_txt">Change</div></button>
+                    </div>
+                    <br><a id="psp_ins2" style="cursor: pointer;">Instructions</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="adm_details">
+
+            <div class="heading3">Basic Details</div>
+
+            <div class="adm_spacer">
+
+              <div class="adm_firstname">
+                  <input type="text" name="firstname" id="firstname" class="adm_firstname_text" required>
+                  <label>First Name<sup>*</sup></label>
+              </div>
+
+              <div class="adm_secondname">
+                  <input type="text" name="secondname" id="secondname" class="adm_secondname_text" required>
+                  <label>Last Name<sup>*</sup></label>
+              </div>
+
+              <div class="adm_gender">
+                  <input type="text" name="gender" onclick="GenderBoxOpen()" id="gender" class="adm_gender_text" autocomplete="off" readonly>
+                  <label style="z-index: 4;">Gender<sup>*</sup></label>
+                  <div class="dropdown_icon"></div>
+                  <div class="gender_options" id="gender_options">
+                      <div class="gender_option_container" id="gender_option_container">
+                          <div class="gender_option" onclick="Option1()" style="margin-bottom:0px;">Male</div>
+                          <div class="gender_option" onclick="Option2()">Female</div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="adm_email">
+                  <input type="text" name="email" id="email" class="adm_email_text" required>
+                  <label>Email<sup>*</sup></label>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="resizer_container_full">
+          <div class="adm_full_details">
+            <div class="heading3">Full Details</div>
+            <div class="adm_spacer">
+
+              <div class="adm_dob" id="adm_dob">
+                <input type="text" name="dob" onclick="DOBBoxOpen()" id="dob" class="adm_dob_text" autocomplete="off" readonly>
+                <label style="z-index: 16;">Date of Birth<sup>*</sup></label>
+                <div class="dropdown_icon"></div>
+                <div class="dob_options" id="dob_options">
+                  <div class="dob_option_container" id="dob_option_container">
+                    <div class="adm_dob_date" id="adm_dob_date">
+                      <div class="dob_option" id="dob_option1" onclick="DDOption1()" style="margin-bottom:0px;">01</div>
+                      <div class="dob_option" id="dob_option2" onclick="DDOption2()" style="margin-bottom:0px;">02</div>
+                      <div class="dob_option" id="dob_option3" onclick="DDOption3()" style="margin-bottom:0px;">03</div>
+                      <div class="dob_option" id="dob_option4" onclick="DDOption4()" style="margin-bottom:0px;">04</div>
+                      <div class="dob_option" id="dob_option5" onclick="DDOption5()" style="margin-bottom:0px;">05</div>
+                      <div class="dob_option" id="dob_option6" onclick="DDOption6()" style="margin-bottom:0px;">06</div>
+                      <div class="dob_option" id="dob_option7" onclick="DDOption7()" style="margin-bottom:0px;">07</div>
+                      <div class="dob_option" id="dob_option8" onclick="DDOption8()" style="margin-bottom:0px;">08</div>
+                      <div class="dob_option" id="dob_option9" onclick="DDOption9()" style="margin-bottom:0px;">09</div>
+                      <div class="dob_option" id="dob_option10" onclick="DDOption10()" style="margin-bottom:0px;">10</div>
+                      <div class="dob_option" id="dob_option11" onclick="DDOption11()" style="margin-bottom:0px;">11</div>
+                      <div class="dob_option" id="dob_option12" onclick="DDOption12()" style="margin-bottom:0px;">12</div>
+                      <div class="dob_option" id="dob_option13" onclick="DDOption13()" style="margin-bottom:0px;">13</div>
+                      <div class="dob_option" id="dob_option14" onclick="DDOption14()" style="margin-bottom:0px;">14</div>
+                      <div class="dob_option" id="dob_option15" onclick="DDOption15()" style="margin-bottom:0px;">15</div>
+                      <div class="dob_option" id="dob_option16" onclick="DDOption16()" style="margin-bottom:0px;">16</div>
+                      <div class="dob_option" id="dob_option17" onclick="DDOption17()" style="margin-bottom:0px;">17</div>
+                      <div class="dob_option" id="dob_option18" onclick="DDOption18()" style="margin-bottom:0px;">18</div>
+                      <div class="dob_option" id="dob_option19" onclick="DDOption19()" style="margin-bottom:0px;">19</div>
+                      <div class="dob_option" id="dob_option20" onclick="DDOption20()" style="margin-bottom:0px;">20</div>
+                      <div class="dob_option" id="dob_option21" onclick="DDOption21()" style="margin-bottom:0px;">21</div>
+                      <div class="dob_option" id="dob_option22" onclick="DDOption22()" style="margin-bottom:0px;">22</div>
+                      <div class="dob_option" id="dob_option23" onclick="DDOption23()" style="margin-bottom:0px;">23</div>
+                      <div class="dob_option" id="dob_option24" onclick="DDOption24()" style="margin-bottom:0px;">24</div>
+                      <div class="dob_option" id="dob_option25" onclick="DDOption25()" style="margin-bottom:0px;">25</div>
+                      <div class="dob_option" id="dob_option26" onclick="DDOption26()" style="margin-bottom:0px;">26</div>
+                      <div class="dob_option" id="dob_option27" onclick="DDOption27()" style="margin-bottom:0px;">27</div>
+                      <div class="dob_option" id="dob_option28" onclick="DDOption28()" style="margin-bottom:0px;">28</div>
+                      <div class="dob_option" id="dob_option29" onclick="DDOption29()" style="margin-bottom:0px;">29</div>
+                      <div class="dob_option" id="dob_option30" onclick="DDOption30()" style="margin-bottom:0px;">30</div>
+                      <div class="dob_option" id="dob_option31" onclick="DDOption31()">31</div>
+                    </div>
+                    <div class="adm_dob_month" id="adm_dob_month">
+                      <div class="dob_optionm" id="dob_optionm1" onclick="DMOption1()" style="margin-bottom:0px;">Jan</div>
+                      <div class="dob_optionm" id="dob_optionm2" onclick="DMOption2()" style="margin-bottom:0px;">Feb</div>
+                      <div class="dob_optionm" id="dob_optionm3" onclick="DMOption3()" style="margin-bottom:0px;">Mar</div>
+                      <div class="dob_optionm" id="dob_optionm4" onclick="DMOption4()" style="margin-bottom:0px;">Apr</div>
+                      <div class="dob_optionm" id="dob_optionm5" onclick="DMOption5()" style="margin-bottom:0px;">May</div>
+                      <div class="dob_optionm" id="dob_optionm6" onclick="DMOption6()" style="margin-bottom:0px;">Jun</div>
+                      <div class="dob_optionm" id="dob_optionm7" onclick="DMOption7()" style="margin-bottom:0px;">Jul</div>
+                      <div class="dob_optionm" id="dob_optionm8" onclick="DMOption8()" style="margin-bottom:0px;">Aug</div>
+                      <div class="dob_optionm" id="dob_optionm9" onclick="DMOption9()" style="margin-bottom:0px;">Sep</div>
+                      <div class="dob_optionm" id="dob_optionm10" onclick="DMOption10()" style="margin-bottom:0px;">Oct</div>
+                      <div class="dob_optionm" id="dob_optionm11" onclick="DMOption11()" style="margin-bottom:0px;">Nov</div>
+                      <div class="dob_optionm" id="dob_optionm12" onclick="DMOption12()">Dec</div>
+                    </div>
+                    <div class="adm_dob_year" id="adm_dob_year">
+                      <div class="dob_option" id="dob_optiony1" onclick="DYOption1()" style="margin-bottom:0px;"></div>
+                      <div class="dob_option" id="dob_optiony2" onclick="DYOption2()" style="margin-bottom:0px;">1988</div>
+                      <div class="dob_option" id="dob_optiony3" onclick="DYOption3()" style="margin-bottom:0px;">1989</div>
+                      <div class="dob_option" id="dob_optiony4" onclick="DYOption4()" style="margin-bottom:0px;">1990</div>
+                      <div class="dob_option" id="dob_optiony5" onclick="DYOption5()" style="margin-bottom:0px;">1991</div>
+                      <div class="dob_option" id="dob_optiony6" onclick="DYOption6()" style="margin-bottom:0px;">1992</div>
+                      <div class="dob_option" id="dob_optiony7" onclick="DYOption7()" style="margin-bottom:0px;">1993</div>
+                      <div class="dob_option" id="dob_optiony8" onclick="DYOption8()" style="margin-bottom:0px;">1994</div>
+                      <div class="dob_option" id="dob_optiony9" onclick="DYOption9()" style="margin-bottom:0px;">1995</div>
+                      <div class="dob_option" id="dob_optiony10" onclick="DYOption10()" style="margin-bottom:0px;">1996</div>
+                      <div class="dob_option" id="dob_optiony11" onclick="DYOption11()" style="margin-bottom:0px;">1997</div>
+                      <div class="dob_option" id="dob_optiony12" onclick="DYOption12()" style="margin-bottom:0px;">1998</div>
+                      <div class="dob_option" id="dob_optiony13" onclick="DYOption13()" style="margin-bottom:0px;">1999</div>
+                      <div class="dob_option" id="dob_optiony14" onclick="DYOption14()" style="margin-bottom:0px;">2000</div>
+                      <div class="dob_option" id="dob_optiony15" onclick="DYOption15()" style="margin-bottom:0px;">2001</div>
+                      <div class="dob_option" id="dob_optiony16" onclick="DYOption16()" style="margin-bottom:0px;">2002</div>
+                      <div class="dob_option" id="dob_optiony17" onclick="DYOption17()" style="margin-bottom:0px;">2003</div>
+                      <div class="dob_option" id="dob_optiony18" onclick="DYOption18()">2004</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="adm_phone">
+                <input type="number" name="phone" id="phone" class="adm_phone_text" required>
+                <label>Mobile Number<sup>*</sup></label>
+              </div>
+
+              <div class="adm_fathersname">
+                <input type="text" name="fathersname" id="fathersname" class="adm_fathersname_text" required>
+                <label>Father's Name<sup>*</sup></label>
+              </div>
+
+              <div class="adm_mothersname">
+                <input type="text" name="mothersname" id="mothersname" class="adm_mothersname_text" required>
+                <label>Mother's Name<sup>*</sup></label>
+              </div>
+
+              <div class="adm_medium">
+                <input type="text" name="medium" onclick="MediumBoxOpen()" id="medium" class="adm_medium_text" autocomplete="off" readonly>
+                <label style="z-index: 14;">Medium<sup>*</sup></label>
+                <div class="dropdown_icon"></div>
+                <div class="medium_options" id="medium_options">
+                  <div class="medium_option_container" id="medium_option_container">
+                    <div class="medium_option" onclick="MOption1()" style="margin-bottom:0px;">English</div>
+                    <div class="medium_option" onclick="MOption2()">Hindi</div>
+                  </div>
+                </div>
+              </div>  
+
+              <div class="adm_course_type">
+                <input type="text" name="course_type" onclick="CourseTypeBoxOpen()" id="course_type" class="adm_course_type_text" autocomplete="off" readonly>
+                <label style="z-index: 12;">Course Type<sup>*</sup></label>
+                <div class="dropdown_icon"></div>
+                <div class="course_type_options" id="course_type_options">
+                  <div class="course_type_option_container" id="course_type_option_container">
+                    <div class="course_type_option" onclick="CTOption1()" style="margin-bottom:0px;">Regular</div>
+                    <div class="course_type_option" onclick="CTOption2()">Private</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="adm_religion">
+                <input type="text" name="religion" onclick="ReligionBoxOpen()" id="religion" class="adm_religion_text" autocomplete="off" readonly>
+                <label style="z-index: 10;">Religion<sup>*</sup></label>
+                <div class="dropdown_icon"></div>
+                <div class="religion_options" id="religion_options">
+                  <div class="religion_option_container" id="religion_option_container">
+                    <div class="religion_option" onclick="ROption1()" style="margin-bottom:0px;">Hindu</div>
+                    <div class="religion_option" onclick="ROption2()" style="margin-bottom:0px;">Muslim</div>
+                    <div class="religion_option" onclick="ROption3()" style="margin-bottom:0px;">Sikh</div>
+                    <div class="religion_option" onclick="ROption4()" style="margin-bottom:0px;">Christian</div>
+                    <div class="religion_option" onclick="ROption5()" style="margin-bottom:0px;">Jainism</div>
+                    <div class="religion_option" onclick="ROption6()" style="margin-bottom:0px;">Buddhist</div>
+                    <div class="religion_option" onclick="ROption7()">Zorastrian</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="adm_category">
+                <input type="text" name="category" onclick="CategoryBoxOpen()" id="category" class="adm_category_text" autocomplete="off" readonly>
+                <label style="z-index: 8;">Category<sup>*</sup></label>
+                <div class="dropdown_icon"></div>
+                <div class="category_options" id="category_options">
+                  <div class="category_option_container" id="category_option_container">
+                    <div class="category_option" onclick="COption1()" style="margin-bottom:0px;">General</div>
+                    <div class="category_option" onclick="COption2()" style="margin-bottom:0px;">SC</div>
+                    <div class="category_option" onclick="COption3()" style="margin-bottom:0px;">ST</div>
+                    <div class="category_option" onclick="COption4()">OBC</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="adm_address">
+                <textarea name="address" id="address" type="text" class="adm_address_text" required></textarea>
+                <label class="adm_laddress">Address<sup>*</sup></label>
+              </div>
+
+              <div class="adm_nationality">
+                <input type="text" name="nationality" onclick="NationalityBoxOpen()" id="nationality" class="adm_nationality_text" autocomplete="off" readonly>
+                <label style="z-index: 6;">Nationality<sup>*</sup></label>
+                <div class="dropdown_icon"></div>
+                <div class="nationality_options" id="nationality_options">
+                  <div class="nationality_option_container" id="nationality_option_container">
+                    <div class="nationality_option" onclick="NOption1()" style="margin-bottom:0px;">Indian</div>
+                    <div class="nationality_option" onclick="NOption2()">Others</div>
+                  </div>
+                </div>
+              </div> 
+
+              <div class="adm_state">
+                <input type="text" name="state" onclick="StateBoxOpen()" id="state" class="adm_state_text" autocomplete="off" required>
+                <label style="z-index:4;">State / Union Territory<sup>*</sup></label>
+                <div class="dropdown_icon hidden" id="state_dropdown_icon"></div>
+                <div class="state_options hidden" id="state_options">
+                  <div class="state_option_container" id="state_option_container">
+                    <div id="state_option_indian_container">
+                      <div class="state_option" onclick="SOption1()" style="margin-bottom:0px;">Madhya Pradesh</div>
+                      <div class="state_option" onclick="SOption2()" style="margin-bottom:0px;">Chhattisgarh</div>
+                      <div class="state_option" onclick="SOption3()" style="margin-bottom:0px;">Uttar Pradesh</div>
+                      <div class="state_option" onclick="SOption4()" style="margin-bottom:0px;">Andaman & Nicobar Islands</div>
+                      <div class="state_option" onclick="SOption5()" style="margin-bottom:0px;">Andhra Pradesh</div>
+                      <div class="state_option" onclick="SOption6()" style="margin-bottom:0px;">Arunachal Pradesh</div>
+                      <div class="state_option" onclick="SOption7()" style="margin-bottom:0px;">Assam</div>
+                      <div class="state_option" onclick="SOption8()" style="margin-bottom:0px;">Bihar</div>
+                      <div class="state_option" onclick="SOption9()" style="margin-bottom:0px;">Chandigarh</div>
+                      <div class="state_option" onclick="SOption10()" style="margin-bottom:0px;">Dadra & Nagar Haveli</div>
+                      <div class="state_option" onclick="SOption11()" style="margin-bottom:0px;">Daman & Diu</div>
+                      <div class="state_option" onclick="SOption12()" style="margin-bottom:0px;">Delhi</div>
+                      <div class="state_option" onclick="SOption13()" style="margin-bottom:0px;">Goa</div>
+                      <div class="state_option" onclick="SOption14()" style="margin-bottom:0px;">Gujrat</div>
+                      <div class="state_option" onclick="SOption15()" style="margin-bottom:0px;">Haryana</div>
+                      <div class="state_option" onclick="SOption16()" style="margin-bottom:0px;">Himachal Pradesh</div>
+                      <div class="state_option" onclick="SOption17()" style="margin-bottom:0px;">Jammu & Kashmir</div>
+                      <div class="state_option" onclick="SOption18()" style="margin-bottom:0px;">Jharkhand</div>
+                      <div class="state_option" onclick="SOption19()" style="margin-bottom:0px;">Karnataka</div>
+                      <div class="state_option" onclick="SOption20()" style="margin-bottom:0px;">Kerala</div>
+                      <div class="state_option" onclick="SOption21()" style="margin-bottom:0px;">Ladakh</div>
+                      <div class="state_option" onclick="SOption22()" style="margin-bottom:0px;">Lakshadweep</div>
+                      <div class="state_option" onclick="SOption23()" style="margin-bottom:0px;">Maharashtra</div>
+                      <div class="state_option" onclick="SOption24()" style="margin-bottom:0px;">Manipur</div>
+                      <div class="state_option" onclick="SOption25()" style="margin-bottom:0px;">Meghalaya</div>
+                      <div class="state_option" onclick="SOption26()" style="margin-bottom:0px;">Mizoram</div>
+                      <div class="state_option" onclick="SOption27()" style="margin-bottom:0px;">Nagaland</div>
+                      <div class="state_option" onclick="SOption28()" style="margin-bottom:0px;">Odisha</div>
+                      <div class="state_option" onclick="SOption29()" style="margin-bottom:0px;">Punjab</div>
+                      <div class="state_option" onclick="SOption30()" style="margin-bottom:0px;">Puducherry</div>
+                      <div class="state_option" onclick="SOption31()" style="margin-bottom:0px;">Rajasthan</div>
+                      <div class="state_option" onclick="SOption32()" style="margin-bottom:0px;">Sikkim</div>
+                      <div class="state_option" onclick="SOption33()" style="margin-bottom:0px;">Tamil Nadu</div>
+                      <div class="state_option" onclick="SOption34()" style="margin-bottom:0px;">Telangana</div>
+                      <div class="state_option" onclick="SOption35()" style="margin-bottom:0px;">Tripura</div>
+                      <div class="state_option" onclick="SOption36()" style="margin-bottom:0px;">Uttarakhand</div>
+                      <div class="state_option" onclick="SOption37()">West Bengal</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="adm_city">
+                <input type="text" name="city" onclick="CityBoxOpen()" id="city" class="adm_city_text" autocomplete="off" required>
+                <label style="z-index: 2;">District/City<sup>*</sup></label>
+                <div class="dropdown_icon hidden" id="city_dropdown_icon"></div>
+                <div class="city_options hidden" id="city_options">
+                  <div class="city_option_container" id="city_option_container">
+                    <div id="city_option_indian_container">
+                      <div class="city_option" id="coption1" onclick="CDOption1()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption2" onclick="CDOption2()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption3" onclick="CDOption3()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption4" onclick="CDOption4()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption5" onclick="CDOption5()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption6" onclick="CDOption6()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption7" onclick="CDOption7()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption8" onclick="CDOption8()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption9" onclick="CDOption9()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption10" onclick="CDOption10()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption11" onclick="CDOption11()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption12" onclick="CDOption12()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption13" onclick="CDOption13()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption14" onclick="CDOption14()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption15" onclick="CDOption15()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption16" onclick="CDOption16()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption17" onclick="CDOption17()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption18" onclick="CDOption18()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption19" onclick="CDOption19()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption20" onclick="CDOption20()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption21" onclick="CDOption21()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption22" onclick="CDOption22()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption23" onclick="CDOption23()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption24" onclick="CDOption24()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption25" onclick="CDOption25()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption26" onclick="CDOption26()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption27" onclick="CDOption27()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption28" onclick="CDOption28()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption29" onclick="CDOption29()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption30" onclick="CDOption30()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption31" onclick="CDOption31()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption32" onclick="CDOption32()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption33" onclick="CDOption33()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption34" onclick="CDOption34()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption35" onclick="CDOption35()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption36" onclick="CDOption36()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption37" onclick="CDOption37()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption38" onclick="CDOption38()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption39" onclick="CDOption39()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption40" onclick="CDOption40()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption41" onclick="CDOption41()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption42" onclick="CDOption42()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption43" onclick="CDOption43()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption44" onclick="CDOption44()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption45" onclick="CDOption45()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption46" onclick="CDOption46()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption47" onclick="CDOption47()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption48" onclick="CDOption48()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption49" onclick="CDOption49()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption50" onclick="CDOption50()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption51" onclick="CDOption51()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption52" onclick="CDOption52()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption53" onclick="CDOption53()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption54" onclick="CDOption54()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption55" onclick="CDOption55()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption56" onclick="CDOption56()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption57" onclick="CDOption57()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption58" onclick="CDOption58()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption59" onclick="CDOption59()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption60" onclick="CDOption60()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption61" onclick="CDOption61()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption62" onclick="CDOption62()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption63" onclick="CDOption63()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption64" onclick="CDOption64()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption65" onclick="CDOption65()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption66" onclick="CDOption66()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption67" onclick="CDOption67()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption68" onclick="CDOption68()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption69" onclick="CDOption69()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption70" onclick="CDOption70()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption71" onclick="CDOption71()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption72" onclick="CDOption72()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption73" onclick="CDOption73()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption74" onclick="CDOption74()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption75" onclick="CDOption75()" style="margin-bottom:0px;"></div>
+                      <div class="city_option" id="coption76" onclick="CDOption76()"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="adm_pincode">
+                <input type="number" name="pincode" id="pincode" class="adm_pincode_text" required>
+                <label style="z-index: 0;">Pincode<sup>*</sup></label>
+              </div>
+                
+            </div>
+          </div>
+        </div>
+
+
+        <div class="resizer_container_full">
+          <div class="adm_full_details">
+            <div class="heading3">Qualification Details</div>
+            <div class="adm_spacer">
+
+              <div class="adm_class">
+                <input type="text" name="class_10" class="adm_class_text" value="10th" readonly>
+                <label style="top:-7px;z-index: 0;">Class</label>
+              </div>
+
+              <div class="adm_rollno_container">
+                <div class="adm_rollno">
+                  <input type="text" name="rollno_10" id="rollno_10" class="adm_rollno_text" required>
+                  <label>Roll number<sup>*</sup></label>
+                </div>
+              </div>
+
+              <div class="adm_percentage">
+                <input type="text" name="percentage_10" id="percentage_10" class="adm_percentage_text" required>
+                <label>Percentage<sup>*</sup></label>
+              </div>
+
+              <div class="adm_board">
+                <input type="text" name="board_10" id="board_10" class="adm_board_text" required>
+                <label>Board<sup>*</sup></label>
+              </div>
+
+              <div class="adm_school">
+                <input type="text" name="school_10" id="school_10" class="adm_school_text" required>
+                <label>School Name<sup>&nbsp</sup></label>
+              </div>
+
+              <div class="adm_line_separator"></div>
+
+              <div class="adm_class">
+                <input type="text" name="class_12" class="adm_class_text" value="12th" readonly>
+                <label style="top:-7px;">Class</label>
+              </div>
+
+              <div class="adm_rollno_container">
+                <div class="adm_rollno">
+                  <input type="text" name="rollno_12" id="rollno_12" class="adm_rollno_text" required>
+                  <label>Roll number<sup>*</sup></label>
+                </div>
+              </div>
+
+              <div class="adm_percentage">
+                <input type="text" name="percentage_12" id="percentage_12" class="adm_percentage_text" required>
+                <label>Percentage<sup>*</sup></label>
+              </div>
+
+              <div class="adm_board">
+                <input type="text" name="board_12" id="board_12" class="adm_board_text" required>
+                <label>Board<sup>*</sup></label>
+              </div>
+
+              <div class="adm_school">
+                <input type="text" name="school_12" id="school_12" class="adm_school_text" required>
+                <label>School Name<sup>&nbsp</sup></label>
+              </div>
+
+              <div class="adm_ug_fields hidden" id="adm_ug_fields">
+
+                <div class="adm_line_separator"></div>
+
+                <div class="adm_class" style="left:0px;">
+                  <input type="text" name="class_ug" id="class_ug" class="adm_class2_text" value="" required>
+                  <label>UG Course<sup>*</sup></label>
+                </div>
+
+                <div class="adm_rollno_container">
+                  <div class="adm_rollno">
+                    <input type="text" name="rollno_ug" id="rollno_ug" class="adm_rollno_text" required>
+                    <label>Roll number<sup>*</sup></label>
+                  </div>
+                </div>
+
+                <div class="adm_percentage">
+                  <input type="text" name="percentage_ug" id="percentage_ug" class="adm_percentage_text" required>
+                  <label>Percentage<sup>*</sup></label>
+                </div>
+
+                <div class="adm_board">
+                  <input type="text" name="board_ug" id="board_ug" class="adm_board_text" required>
+                  <label>University<sup>*</sup></label>
+                </div>
+
+                <div class="adm_school">
+                  <input type="text" name="school_ug" id="school_ug" class="adm_school_text" required>
+                  <label>College Name<sup>&nbsp</sup></label>
+                </div>
+
+              </div>
+                  
+            </div>
+          </div>
+        </div>
+
+        <div class="resizer_container_full">
+          <div class="adm_full_details" style="margin-bottom: 60px;">
+            <div class="heading2">Declaration</div>
+            <div class="adm_spacer">
+              <div  style="display: table;position: relative;">
+                <input type="checkbox" name="declaration" id="declaration" value="0">
+                <div class="adm_checkbox" id="adm_checkbox" onclick="CheckBoxCheck()">
+                  <div id="adm_checkbox_check1_container"><div id="adm_checkbox_check1" class="hidden"></div></div>
+                  <div id="adm_checkbox_check2_container"><div id="adm_checkbox_check2" class="hidden"></div></div>
+                </div>
+                <div style="float: left;margin:4px 0px 0px 45px;">I HEREBY DECLARE THAT ALL INFORMATION STATED ABOVE IS 
+                  TRUE AND CORRECT TO THE BEST OF MY KNOWLEDGE AND BELIEF.</div>
+              </div>
+              <div style="display: flex; justify-content:center; width:100%;margin-top:20px;">
+                <button class="go_back2" onclick="Step2to1Mover()"><div class="go_back2_expander"><div class="go_back2_icon"></div></div>Go Back</button>
+                <input name="submit" type="submit" value="Submit" class="submit" onclick="Step2to3Mover()">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      <div class="psp_ins_bg" id="psp_desc_bg" style="z-index: 18;">
+        <div style="height:100%;width:100%;display: flex; justify-content: center;align-items: center;">
+
+          <div class="psp_instructions" id="psp_instructions">
+            <button class="psp_ins_close" id="psp_ins_close"><img src="images/close_icon2.png"></button>
+            
+            <div class="psp_ins_matter_container">
+              <div class="psp_reference_container">
+                <img src="images/psp_reference.png" class="psp_reference"> 
+              </div>
+              <div class="psp_ins_text">
+                <h2>Photograph Upload Instructions</h2>
+                <ul>
+                  <li>Photograph should not exceeding by 2MB in size.</li>
+                  <li>Photograph should be in JPG format.</li>
+                  <li>Photograph should have an aspect ratio of 3.5:4.</li>
+                  <li>Photograph subject should be against a White/Bright background.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="end_credits">
+        <div class="quick_links">
+        <font style="font-size:20px;color:#27426E;">Quick Links</font>
+        <br><br><a href="http://cccjbp.in/courses.php"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspDirectorate of Institutional Finance</a>
+        <br><a href="http://cccjbp.in/index.php"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspRagging Instructions</a>
+        <br><a href="http://cccjbp.in/index.php"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspNational Holidays Calendar</a>
+        <br><a href="http://cccjbp.in/index.php#"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspDownload Alumni Form</a>
+        </div>
+        <div class="end_partition2">
+        <div class="time_table">
+          <font style="font-size:20px;color:#27426E;">Time Table</font>
+          <br><br><a href="http://cccjbp.in/index.php#"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspTime-Table Session June 2021</a>
+          <br><a href="http://cccjbp.in/index.php#"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspMain Examination Time-Table</a>
+        </div><br><br>
+        <div class="radio_ad">
+          <font style="font-size:20px;color:#27426E;">CCC Radio Ad</font>
+          <br><br>
+          <audio style="width:290px;outline:transparent;" controls>
+          <source src="assets/radio_ad.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        </div>
+        <div class="contact_us">
+        <font style="font-size:20px;color:#27426E;">Contact Us</font>
+        <br><br><b>Telephone:</b><br>0761-42187-95/96
+        <br><br><b>Email:</b><br> info@cccjbp.in
+        <br><br><b>Address:</b><br> College of Computers & Communication<br>1101, Near Shastri Bridge, Napier Town<br>Jabalpur, Madhya Pradesh - 482001
+        </div>
+
+        <center><div class="copyright_container">
+          <div class="copyright"><div style="width:100%;">
+        © Copyright 2021 Made by Mohit Nandgirikar & Dharmi Barman, BCA VI Sem
+        <div class="cv_container">
+            <img src="images/account_icon.png">
+            <div id="CounterVisitor2">
+                <span class="counter-item">0</span>
+                <span class="counter-item">0</span>
+                <span class="counter-item">1</span>
+                <span class="counter-item">1</span>
+                <span class="counter-item">8</span>
+                <span class="counter-item">4</span>
+              </div>
+              <div class="tooltip">This&nbspmuch&nbsppeople&nbspviewed&nbspCCC&nbspwebsite.</div>
+        </div>
+
+
+        </div></div>
+        </center>
+
+      </div>
+
+
+    </div>
+
+  </center>
+
+
+
+  <center>
+
+    <div id="adm_step3" class="adm_step3 hidden">
+
+      <div class="resizer_container_full">
+        <div class="adm_course_heading">
+        <div class="heading">Upload Documents</div>
+
+        <div class="adm_spacer" style="text-align: center;">
+          Upload the respective Documents required for Admission.
+        </div>
+
+        </div>
+      </div>
+
+      <div class="resizer_container_full">
+
+        <div class="adm_upload_documents">
+
+          <div class="heading3">Class 10th Marksheet</div>
+
+          <div class="adm_spacer">
+
+            <div style="display:flex; justify-content:center;">
+
+              <div class="upload_large" id="adm_ud_upload" onclick="UploadDoc10Dialog()">
+                <center>
+                  <div id="ud_upload_change_before">
+                    <div class="upload_large_icon"></div>
+                    Upload Document
+                  </div>
+                  <div id="ud_upload_change_after" class="hidden">
+                    <div class="upload_large_icon_changer"></div>
+                    <div class="ud_loader"></div>
+                    <div class="change_large_icon"></div>
+                    <div class="change_text">Change Document</div>
+                  </div>
+                </center>
+              </div>
+            
+            </div>
+
+          <center><br><a class="upload_ins" id="upload_ins" style="cursor: pointer;">Instructions</a></center>
+
+          </div>
+
+          <div class="adm_ud_bg_container hidden" id="doc_container">
+            <img class="doc" src="" id="output_doc10">
+            <div class="adm_ud_bg"></div>
+          </div>
+
+        </div>
+
+        <div class="adm_upload_documents">
+
+          <div class="heading3">Class 12th Marksheet</div>
+
+          <div class="adm_spacer">
+
+            <div style="display:flex; justify-content:center;">
+
+              <div class="upload_large" id="adm_ud_upload" onclick="UploadDoc12Dialog()">
+                <center>
+                  <div id="ud_upload_change_before2">
+                    <div class="upload_large_icon"></div>
+                    Upload Document
+                  </div>
+                  <div id="ud_upload_change_after2" class="hidden">
+                    <div class="upload_large_icon_changer"></div>
+                    <div class="ud_loader"></div>
+                    <div class="change_large_icon"></div>
+                    <div class="change_text">Change Document</div>
+                  </div>
+                </center>
+              </div>
+
+            </div>
+
+          <center><br><a class="upload_ins" id="upload_ins2" style="cursor: pointer;">Instructions</a></center>
+
+          </div>
+
+          <div class="adm_ud_bg_container hidden" id="doc_container2">
+            <img class="doc" src="" id="output_doc12">
+            <div class="adm_ud_bg"></div>
+          </div>
+
+        </div>
+
+
+        <div class="adm_upload_documents hidden" id="adm_ud_ug_card">
+
+          <div class="heading3" id="adm_ud_ug_heading">UG Course Marksheet</div>
+
+          <div class="adm_spacer">
+
+            <div style="display:flex; justify-content:center;">
+
+              <div class="upload_large" id="adm_ud_upload" onclick="UploadDocUGDialog()">
+                <center>
+                  <div id="ud_upload_change_beforeug">
+                    <div class="upload_large_icon"></div>
+                    Upload Document
+                  </div>
+                  <div id="ud_upload_change_afterug" class="hidden">
+                    <div class="upload_large_icon_changer"></div>
+                    <div class="ud_loader"></div>
+                    <div class="change_large_icon"></div>
+                    <div class="change_text">Change Document</div>
+                  </div>
+                </center>
+              </div>
+
+            </div>
+
+          <center><br><a class="upload_ins" id="upload_ins3" style="cursor: pointer;">Instructions</a></center>
+
+          </div>
+
+          <div class="adm_ud_bg_container hidden" id="doc_containerug">
+            <img class="doc" src="" id="output_docUG">
+            <div class="adm_ud_bg"></div>
+          </div>
+
+        </div>
+
+
+        <div class="adm_upload_documents">
+
+          <div class="heading3">Domicile Certificate</div>
+
+          <div class="adm_spacer">
+
+            <div style="display:flex; justify-content:center;">
+
+              <div class="upload_large" id="adm_ud_upload" onclick="UploadDocDMDialog()">
+                <center>
+                  <div id="ud_upload_change_before3">
+                    <div class="upload_large_icon"></div>
+                    Upload Document
+                  </div>
+                  <div id="ud_upload_change_after3" class="hidden">
+                    <div class="upload_large_icon_changer"></div>
+                    <div class="ud_loader"></div>
+                    <div class="change_large_icon"></div>
+                    <div class="change_text">Change Document</div>
+                  </div>
+                </center>
+              </div>
+
+            </div>
+
+          <center><br><a class="upload_ins" id="upload_ins4" style="cursor: pointer;">Instructions</a></center>
+
+          </div>
+
+          <div class="adm_ud_bg_container hidden" id="doc_container3">
+            <img class="doc" src="" id="output_docDM">
+            <div class="adm_ud_bg"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="resizer_container_full">
+        <div class="adm_full_details" style="margin-bottom: 60px;">
+          <div class="heading2">Declaration</div>
+          <div class="adm_spacer">
+            <div  style="display: table;position: relative;">
+              <input type="checkbox" name="declaration" id="declaration2" value="0" required>
+              <div class="adm_checkbox" id="adm_checkbox2" onclick="CheckBoxCheckTwo()">
+                <div id="adm_checkbox_check1_container"><div id="adm_checkbox_check12" class="hidden"></div></div>
+                <div id="adm_checkbox_check2_container"><div id="adm_checkbox_check22" class="hidden"></div></div>
+              </div>
+              <div style="float: left;margin:4px 0px 0px 45px;">I HEREBY DECLARE THAT ALL DOCUMENTS ATTACHED ABOVE ARE 
+                GENUINE, TRUE AND CORRECT TO THE BEST OF MY KNOWLEDGE AND BELIEF.</div>
+            </div>
+            <div style="display: flex; justify-content:center; width:100%;margin-top:20px;">
+              <button class="go_back2" onclick="Step3to2Mover()"><div class="go_back2_expander"><div class="go_back2_icon"></div></div>Go Back</button>
+              <input name="submit" type="submit" value="Submit" class="submit" onclick="Step3to4Mover()">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="upload_ins_bg" id="desc_bg" style="z-index: 10;">
+
+        <div style="height:100%;width:100%;display: flex; justify-content: center;align-items: center;">
+      
+          <div class="upload_instructions" id="upload_instructions">
+      
+            <button class="upload_ins_close" id="upload_ins_close"><img src="images/close_icon2.png"></button>
+            
+            <div class="upload_ins_matter_container">
+              <div class="upload_reference_container">
+                <img src="images/doc_reference.png" class="upload_reference"> 
+              </div>
+              <div class="upload_ins_text">
+                <h2>Document Upload Instructions</h2>
+                <ul>
+                  <li>Document should not exceeding by 6MB in size.</li>
+                  <li>Document should be in JPG format.</li>
+                  <li>Document should be clear & legible.</li>
+                  <li>Do not upload in PDF format.</li>
+                </ul>
+              </div>
+            </div>
+      
+          </div>
+      
+        </div>
+
+      </div>
+
+
+      <div class="end_credits">
+        <div class="quick_links">
+        <font style="font-size:20px;color:#27426E;">Quick Links</font>
+        <br><br><a href="http://cccjbp.in/courses.php"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspDirectorate of Institutional Finance</a>
+        <br><a href="http://cccjbp.in/index.php"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspRagging Instructions</a>
+        <br><a href="http://cccjbp.in/index.php"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspNational Holidays Calendar</a>
+        <br><a href="http://cccjbp.in/index.php#"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspDownload Alumni Form</a>
+        </div>
+        <div class="end_partition2">
+        <div class="time_table">
+          <font style="font-size:20px;color:#27426E;">Time Table</font>
+          <br><br><a href="http://cccjbp.in/index.php#"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspTime-Table Session June 2021</a>
+          <br><a href="http://cccjbp.in/index.php#"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspMain Examination Time-Table</a>
+        </div><br><br>
+        <div class="radio_ad">
+          <font style="font-size:20px;color:#27426E;">CCC Radio Ad</font>
+          <br><br>
+          <audio style="width:290px;outline:transparent;" controls>
+          <source src="assets/radio_ad.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        </div>
+        <div class="contact_us">
+        <font style="font-size:20px;color:#27426E;">Contact Us</font>
+        <br><br><b>Telephone:</b><br>0761-42187-95/96
+        <br><br><b>Email:</b><br> info@cccjbp.in
+        <br><br><b>Address:</b><br> College of Computers & Communication<br>1101, Near Shastri Bridge, Napier Town<br>Jabalpur, Madhya Pradesh - 482001
+        </div>
+
+        <center><div class="copyright_container">
+          <div class="copyright"><div style="width:100%;">
+        © Copyright 2021 Made by Mohit Nandgirikar & Dharmi Barman, BCA VI Sem
+        <div class="cv_container">
+            <img src="images/account_icon.png">
+            <div id="CounterVisitor3">
+                <span class="counter-item">0</span>
+                <span class="counter-item">0</span>
+                <span class="counter-item">1</span>
+                <span class="counter-item">1</span>
+                <span class="counter-item">8</span>
+                <span class="counter-item">4</span>
+              </div>
+              <div class="tooltip">This&nbspmuch&nbsppeople&nbspviewed&nbspCCC&nbspwebsite.</div>
+        </div>
+
+
+        </div></div>
+        </center>
+
+      </div>
+
+
+
+    </div>
+
+  </center>
+
+
+
+  <center>
+
+    <div id="adm_step4" class="adm_step4 hidden">
+
+    <form method="POST" action="admission_final.php" enctype="multipart/form-data">
+
+      <input type="file" accept="image/jpeg" name="psp_image" id="file" onchange="loadFile(event)">
+      
+      <input type="file" accept="image/jpeg" name="doc_10" id="doc_10" onchange="loadFile2(event)">
+
+      <input type="file" accept="image/jpeg" name="doc_12" id="doc_12" onchange="loadFile3(event)">
+
+      <input type="file" accept="image/jpeg" name="doc_UG" id="doc_UG" onchange="loadFile6(event)">
+
+      <input type="file" accept="image/jpeg" name="doc_DM" id="doc_DM" onchange="loadFile4(event)">
+
+      <div class="resizer_container_full">
+        <div class="adm_course_heading">
+        <div class="heading">Review & Payment</div>
+
+        <div class="adm_spacer" style="text-align: center;">
+          Review the Details and Documents you filled and attached earlier.<br>Then choose the Payment Mode.
+        </div>
+
+        </div>
+      </div>
+
+      <div class="resizer_container_full">
+
+        <div class="adm_review">
+
+          <div class="heading3">Review</div>
+
+          <div class="adm_spacer" style="width:100%;margin:0px;padding:20px;padding-top:25px;">
+
+            <div class="adm_photo_container" style="float:left;">
+              <div class="adm_photo">
+                <div id="adm_psp_img" class="adm_psp">
+                  <img src="" id="psp_review_output" style="pointer-events: none;">
+                </div>
+              </div>
+            </div>
+
+            <div class="adm_review_basic">
+
+              <div class="adm_review_course">
+                <input type="text" name="review_course_name" id="course_name" class="adm_review_course_text" style="border-color:#b0b0b0;" value="" readonly>
+                <label style="top:-7px;z-index: 0;">Course</label>
+              </div>
+
+              <div class="adm_medium2">
+                <input type="text" name="review_medium" id="review_medium" class="adm_medium_text_active" style="border-color:#b0b0b0;" autocomplete="off" readonly>
+                <label style="z-index: 8;">Medium<sup>*</sup></label>
+              </div>  
+    
+              <div class="adm_course_type2">
+                <input type="text" name="review_course_type" id="review_course_type" class="adm_course_type_text_active" style="border-color:#b0b0b0;" autocomplete="off" readonly>
+                <label style="z-index: 6;">Course Type<sup>*</sup></label>
+              </div>
+
+              <div class="adm_firstname2">
+                <input type="text" name="review_firstname" id="review_firstname" class="adm_firstname_text_active" style="border-color:#b0b0b0;" readonly>
+                <label>First Name<sup>*</sup></label>
+              </div>
+    
+              <div class="adm_secondname2">
+                <input type="text" name="review_secondname" id="review_secondname" class="adm_secondname_text_active" style="border-color:#b0b0b0;" readonly>
+                <label>Last Name<sup>*</sup></label>
+              </div>
+    
+              <div class="adm_gender2">
+                <input type="text" name="review_gender" id="review_gender" class="adm_gender_text_active" style="border-color:#b0b0b0;" autocomplete="off" readonly>
+                <label style="z-index: 4;">Gender<sup>*</sup></label>
+              </div>
+    
+              <div class="adm_email2">
+                <input type="text" name="review_email" id="review_email" class="adm_email_text_active" style="border-color:#b0b0b0;" readonly>
+                <label>Email<sup>*</sup></label>
+              </div>
+
+            </div>
+
+            <div class="adm_dob" id="adm_dob">
+              <input type="text" name="review_dob" id="review_dob" class="adm_dob_text_active" style="border-color:#b0b0b0;" autocomplete="off" readonly>
+              <label style="z-index: 10;">Date of Birth<sup>*</sup></label>
+            </div>
+    
+            <div class="adm_phone">
+              <input type="number" name="review_phone" id="review_phone" class="adm_phone_text_active" style="border-color:#b0b0b0;" readonly>
+              <label>Mobile Number<sup>*</sup></label>
+            </div>
+    
+            <div class="adm_fathersname">
+              <input type="text" name="review_fathersname" id="review_fathersname" class="adm_fathersname_text_active" style="border-color:#b0b0b0;" readonly>
+              <label>Father's Name<sup>*</sup></label>
+            </div>
+    
+            <div class="adm_mothersname">
+              <input type="text" name="review_mothersname" id="review_mothersname" class="adm_mothersname_text_active" style="border-color:#b0b0b0;" readonly>
+              <label>Mother's Name<sup>*</sup></label>
+            </div>
+    
+            <div class="adm_religion">
+              <input type="text" name="review_religion" id="review_religion" class="adm_religion_text_active" style="border-color:#b0b0b0;" autocomplete="off" readonly>
+              <label style="z-index: 6;">Religion<sup>*</sup></label>
+            </div>
+    
+            <div class="adm_category">
+              <input type="text" name="review_category" id="review_category" class="adm_category_text_active" style="border-color:#b0b0b0;" autocomplete="off" readonly>
+              <label style="z-index: 4;">Category<sup>*</sup></label>
+            </div>
+    
+            <div class="adm_address">
+              <textarea name="review_address" id="review_address" type="text" class="adm_address_text_active" style="border-color:#b0b0b0;" readonly></textarea>
+              <label class="adm_laddress">Address<sup>*</sup></label>
+            </div>
+    
+            <div class="adm_nationality">
+              <input type="text" name="review_nationality" id="review_nationality" class="adm_nationality_text_active" style="border-color:#b0b0b0;" autocomplete="off" readonly>
+              <label style="z-index: 4;">Nationality<sup>*</sup></label>
+            </div>
+    
+            <div class="adm_state">
+              <input type="text" name="review_state" id="review_state" class="adm_state_text_active" style="border-color:#b0b0b0;" autocomplete="off" readonly>
+              <label>State / Union Territory<sup>*</sup></label>
+            </div>
+
+            <div class="adm_city">
+              <input type="text" name="review_city" id="review_city" class="adm_city_text_active" style="border-color:#b0b0b0;" autocomplete="off" readonly>
+              <label style="z-index: 2;">District/City<sup>*</sup></label>
+            </div>
+    
+            <div class="adm_pincode">
+              <input type="number" name="review_pincode" id="review_pincode" class="adm_pincode_text_active" style="border-color:#b0b0b0;" readonly>
+              <label style="z-index: 0;">Pincode<sup>*</sup></label>
+            </div>
+
+
+            <div class="adm_line2_separator">
+              <div class="adm_line_s_heading">QUALIFICATION DETAILS</div>
+            </div>
+
+            <div class="adm_class">
+              <input type="text" name="review_class_10" id="review_class_10" class="adm_class_text" style="border-color:#b0b0b0;" value="10th" readonly>
+              <label style="top:-7px;z-index: 0;">Class</label>
+            </div>
+
+            <div class="adm_rollno_container">
+              <div class="adm_rollno">
+                  <input type="text" name="review_rollno_10" id="review_rollno_10" class="adm_rollno_text_active" style="border-color:#b0b0b0;" readonly>
+                  <label>Roll number<sup>*</sup></label>
+              </div>
+            </div>
+
+            <div class="adm_percentage">
+                <input type="number" name="review_percentage_10" id="review_percentage_10" class="adm_percentage_text_active" style="border-color:#b0b0b0;" readonly>
+                <label>Percentage<sup>*</sup></label>
+            </div>
+
+            <div class="adm_board">
+                <input type="text" name="review_board_10" id="review_board_10" class="adm_board_text_active" style="border-color:#b0b0b0;" readonly>
+                <label>Board<sup>*</sup></label>
+            </div>
+
+            <div class="adm_school">
+              <input type="text" name="review_school_10" id="review_school_10" class="adm_school_text_active" style="border-color:#b0b0b0;" readonly>
+              <label>School Name<sup>*</sup></label>
+            </div>
+
+            <div class="adm_line_separator"></div>
+
+            <div class="adm_class">
+              <input type="text" name="review_class_12" id="review_class_12" class="adm_class_text" style="border-color:#b0b0b0;" value="12th" readonly>
+              <label style="top:-7px;">Class</label>
+            </div>
+
+            <div class="adm_rollno_container">
+              <div class="adm_rollno">
+                  <input type="text" name="review_rollno_12" id="review_rollno_12" class="adm_rollno_text_active" style="border-color:#b0b0b0;" readonly>
+                  <label>Roll number<sup>*</sup></label>
+              </div>
+            </div>
+
+            <div class="adm_percentage">
+                <input type="number" name="review_percentage_12" id="review_percentage_12" class="adm_percentage_text_active" style="border-color:#b0b0b0;" readonly>
+                <label>Percentage<sup>*</sup></label>
+            </div>
+
+            <div class="adm_board">
+                <input type="text" name="review_board_12" id="review_board_12" class="adm_board_text_active" style="border-color:#b0b0b0;" readonly>
+                <label>Board<sup>*</sup></label>
+            </div>
+
+            <div class="adm_school">
+              <input type="text" name="review_school_12" id="review_school_12" class="adm_school_text_active" style="border-color:#b0b0b0;" readonly>
+              <label>School Name<sup>*</sup></label>
+            </div>
+
+            <div class="adm_review_ug_fields hidden" id="adm_review_ug_fields">
+
+              <div class="adm_line_separator"></div>
+
+              <div class="adm_class" style="left:0px;">
+                <input type="text" name="review_class_ug" id="review_class_ug" class="adm_class_text" style="border-color:#b0b0b0;" value="" readonly>
+                <label style="top:-7px;">UG Course</label>
+              </div>
+
+              <div class="adm_rollno_container">
+                <div class="adm_rollno">
+                    <input type="text" name="review_rollno_ug" id="review_rollno_ug" class="adm_rollno_text_active" style="border-color:#b0b0b0;" readonly>
+                    <label>Roll number<sup>*</sup></label>
+                </div>
+              </div>
+
+              <div class="adm_percentage">
+                  <input type="number" name="review_percentage_ug" id="review_percentage_ug" class="adm_percentage_text_active" style="border-color:#b0b0b0;" readonly>
+                  <label>Percentage<sup>*</sup></label>
+              </div>
+
+              <div class="adm_board">
+                  <input type="text" name="review_board_ug" id="review_board_ug" class="adm_board_text_active" style="border-color:#b0b0b0;" readonly>
+                  <label>University<sup>*</sup></label>
+              </div>
+
+              <div class="adm_school">
+                <input type="text" name="review_school_ug" id="review_school_ug" class="adm_school_text_active" style="border-color:#b0b0b0;" readonly>
+                <label>College Name<sup>*</sup></label>
+              </div>
+
+            </div>
+
+
+            <div class="adm_line2_separator">
+              <div class="adm_line_s_heading">ATTACHED DOCUMENTS</div>
+            </div>
+
+            <center>
+
+              <div id="doc_10_box" class="adm_doc_box">
+                <img src="" id="review_output_doc10" style="height:215px;width:auto;">
+                <div class="video_desc">10th Marksheet</div>
+              </div>
+
+              <div id="doc_12_box" class="adm_doc_box">
+                <img src="" id="review_output_doc12" style="height:215px;width:auto;">
+                <div class="video_desc">12th Marksheet</div>
+              </div>
+
+              <div id="doc_ug_box" class="adm_doc_box hidden">
+                <img src="" id="review_output_docUG" style="height:215px;width:auto;">
+                <div class="video_desc" id="adm_review_ug_desc">UG Marksheet</div>
+              </div>
+
+              <div id="doc_dm_box" class="adm_doc_box">
+                <img src="" id="review_output_docDM" style="height:215px;width:auto;">
+                <div class="video_desc">Domicile Certificate</div>
+              </div>
+
+            </center>
+
+          </div>
+
+        </div>
+
+        <div class="adm_review">
+
+          <div class="heading3">Payment Mode</div>
+
+          <div class="adm_spacer">
+
+            <center>
+
+              <div class="adm_payment_mode" onclick="PRadio1()" id="payment_mode_1">
+                <div class="adm_radio_button" id="adm_radio_button"><div class="adm_radio_filler hidden" id="adm_radio_filler"></div></div>
+                <div class="adm_payment_mode_text">Online</div>
+                <input type="radio" class="radio_og" id="payment_online" name="payment_mode" value="Online">
+              </div>
+
+              <div class="adm_payment_mode" onclick="PRadio2()" id="payment_mode_2">
+                <div class="adm_radio_button" id="adm_radio_button2"><div class="adm_radio_filler hidden" id="adm_radio_filler2"></div></div>
+                <div class="adm_payment_mode_text">Offline</div>
+                <input type="radio" class="radio_og" id="payment_offline" name="payment_mode" value="Offline">
+              </div>
+
+            </center>
+
+            <div id="payment_online_mode_desc" class="hidden">
+
+              <div style="display: flex; justify-content: center;height:130px;"><img src="images/warning_icon.png" style="height:150px;pointer-events: none;"></div>
+              *Payment can be done by UPI, Other payment Apps like PayTM, GPay, PhonePe or Direct Bank-to-Bank online Funds Transfer.<br><br><br><br>
+
+              <div class="payment_acc_details_container">
+              
+                <div class="copy" onclick="copy()"><div class="copy_icon"></div>Copy</div>
+
+                <label class="acc_label">Account Details</label>
+
+                <textarea class="payment_acc_details" id="payment_acc_details" readonly>
+  Account Name : &nbsp College of Computer & Communication
+  Account Number : &nbsp 522001010013019
+  IFSC Code : &nbsp UBIN0552208
+  Bank Name : &nbsp Union Bank of Indian
+  Branch : &nbsp Napier Town Jabalpur (M.P.)</textarea>
+
+              </div>
+
+              <br><div class="adm_line2_separator">
+                <div class="adm_line_s_heading">PAYMENT DONE?</div>
+              </div>
+
+              <div class="adm_transaction_id">
+                <input type="text" name="transaction_id" id="transaction_id" class="adm_transaction_id_text">
+                <label>Transaction ID<sup>*</sup></label>
+              </div>
+
+              <br><br>
+              
+              <div style="display: flex;justify-content: left;border:0px solid red;width:100%;margin-bottom:0px;position: relative;">
+                <input type="file" accept="image/jpeg, application/pdf" name="payment_receipt" id="receipt" onchange="loadFile5(event)">
+                <div onclick="AttachReceipt()" class="attach" id="receipt_upload"><div class="attach_icon"></div><div class="upload_txt">Attach Receipt</div></div>
+                <div id="file-attach-filename"></div>
+              </div>
+
+            </div>
+
+            <div id="payment_offline_mode_desc" class="hidden">
+              <div style="display: flex; justify-content: center;height:130px;"><img src="images/warning_icon.png" style="height:150px;pointer-events: none;"></div>
+              *Please note, The Candidate have to pay Admission Form Fee sum of &#8377 200/- in the Accounts Dept of the College.<br><br><br>
+              <div style="display: flex; justify-content: center;">
+                <a href="contact_us.htm"><div class="submit">Find Us</div></a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="resizer_container_full">
+        <div class="adm_full_details" style="margin-bottom: 60px;">
+          <div class="heading2">Final Declaration</div>
+          <div class="adm_spacer">
+            <div  style="display: table;position: relative;">
+              <input type="checkbox" name="declaration3" id="declaration3" value="0" required>
+              <div class="adm_checkbox" id="adm_checkbox3" onclick="CheckBoxCheckThree()">
+                <div id="adm_checkbox_check1_container"><div id="adm_checkbox_check13" class="hidden"></div></div>
+                <div id="adm_checkbox_check2_container"><div id="adm_checkbox_check23" class="hidden"></div></div>
+              </div>
+              <div style="float: left;margin:4px 0px 0px 45px;">I HEREBY DECLARE THAT ALL INFORMATION STATED & DOCUMENTS ATTACHED ABOVE ARE 
+                GENUINE, TRUE AND CORRECT TO THE BEST OF MY KNOWLEDGE AND BELIEF.</div>
+            </div>
+            <div style="display: flex; justify-content:center; width:100%;margin-top:20px;">
+              <button class="go_back2" onclick="Step4to3Mover()"><div class="go_back2_expander"><div class="go_back2_icon"></div></div>Go Back</button>
+              <input name="submit" type="submit" value="Submit" class="submit" onclick="FinalLoading()">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+
+      <div class="end_credits">
+        <div class="quick_links">
+        <font style="font-size:20px;color:#27426E;">Quick Links</font>
+        <br><br><a href="http://cccjbp.in/courses.php"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspDirectorate of Institutional Finance</a>
+        <br><a href="http://cccjbp.in/index.php"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspRagging Instructions</a>
+        <br><a href="http://cccjbp.in/index.php"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspNational Holidays Calendar</a>
+        <br><a href="http://cccjbp.in/index.php#"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspDownload Alumni Form</a>
+        </div>
+        <div class="end_partition2">
+        <div class="time_table">
+          <font style="font-size:20px;color:#27426E;">Time Table</font>
+          <br><br><a href="http://cccjbp.in/index.php#"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspTime-Table Session June 2021</a>
+          <br><a href="http://cccjbp.in/index.php#"><img src="images/arrow.png" style="vertical-align:top;">&nbsp&nbsp&nbspMain Examination Time-Table</a>
+        </div><br><br>
+        <div class="radio_ad">
+          <font style="font-size:20px;color:#27426E;">CCC Radio Ad</font>
+          <br><br>
+          <audio style="width:290px;outline:transparent;" controls>
+          <source src="assets/radio_ad.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        </div>
+        <div class="contact_us">
+        <font style="font-size:20px;color:#27426E;">Contact Us</font>
+        <br><br><b>Telephone:</b><br>0761-42187-95/96
+        <br><br><b>Email:</b><br> info@cccjbp.in
+        <br><br><b>Address:</b><br> College of Computers & Communication<br>1101, Near Shastri Bridge, Napier Town<br>Jabalpur, Madhya Pradesh - 482001
+        </div>
+
+        <center><div class="copyright_container">
+          <div class="copyright"><div style="width:100%;">
+        © Copyright 2021 Made by Mohit Nandgirikar & Dharmi Barman, BCA VI Sem
+        <div class="cv_container">
+            <img src="images/account_icon.png">
+            <div id="CounterVisitor4">
+                <span class="counter-item">0</span>
+                <span class="counter-item">0</span>
+                <span class="counter-item">1</span>
+                <span class="counter-item">1</span>
+                <span class="counter-item">8</span>
+                <span class="counter-item">4</span>
+              </div>
+              <div class="tooltip">This&nbspmuch&nbsppeople&nbspviewed&nbspCCC&nbspwebsite.</div>
+        </div>
+
+
+        </div></div>
+        </center>
+
+      </div>
+
+
+    </div>
+
+  </center>
+
+</div>
+
+<div id="button_bar">
+
+   <center>
+    <div class="button_bar_d">
+
+     <a href="homepage.htm"><button class="button1">Home</button></a>
+     <a href="about_us.htm"><button class="button2">About Us</button></a>
+     <div class="courses_link">
+      <a href="courses.htm"><button class="button3">Courses</button></a>
+      <div class="courses_bar">
+       <div class="courses_list1">
+        <a href="cs.htm"><div class="courses_l1"><div style="width:190px;border:0px solid blue;">BCA / M.Sc / PGDCA / DCA</div></div></a>
+       </div>
+       <div class="courses_list2">
+        <a href="science.htm"><div class="courses_l2"><div style="width:32px;border:0px solid blue;">B.Sc</div></div></a>
+       </div>
+       <div class="courses_list3">
+        <a href="management.htm"><div class="courses_l3"><div style="width:32px;border:0px solid blue;">BBA</div></div></a>
+       </div>
+      </div>
+     </div>
+     <a href="facilities.htm"><button class="button4">Facilities</button></a>
+     <a href="achievements.htm"><button class="button6">Achievements</button></a>
+     <div class="gallery_link">
+      <a href="gallery.htm"><button class="button7">Gallery</button></a>
+      <div class="gallery_bar">
+       <div class="gallery_list1">
+        <a href="gallery.htm"><div class="gallery_l1"><div style="width:101px;border:0px solid blue;">Photo Gallery</div></div></a>
+       </div>
+       <div class="gallery_list2">
+        <a href="videogallery.htm"><div class="gallery_l2"><div style="width:101px;border:0px solid blue;">Video Gallery</div></div></a>
+       </div>
+      </div>
+     </div>
+     <a href="notice.htm"><button class="button8">Notice</button></a>
+     <a href="contact_us.htm"><button class="button9">Contact Us</button></a>
+     </div>
+   </center>
+
+   <div class="menu_close"><img src="images/close_icon.png"></div>
+
+   <div class="button_bar_m">
+    <button id="menu" class="button_m_main">
+      <img src="images/menu_icon.png">
+
+      <div class="sidebar_bg_container">
+        <div class="sidebar_bg"></div>
+
+        <div class="sidebar">
+        
+          <div class="buttonm_spacer"><a href="homepage.htm"><div class="buttonm1">Home</div></a></div>
+          <div class="buttonm_spacer"><a href="about_us.htm"><div class="buttonm2">About&nbspUs</div></a></div>
+          <div class="buttonm_spacer"><div class="buttonm3"><div class="buttonm3_text">Courses<img src="images/drop_down_arrow.png"></div>
+            <div class="courses_m_expand">
+              <a href="courses.htm"><div class="buttonm3p">Courses<img src="images/link_icon.png"></div></a>
+              <a href="cs.htm"><div class="courses_ml1">BCA&nbsp/&nbspM.Sc&nbsp/&nbspPGDCA&nbsp/&nbspDCA</div></a>
+              <a href="science.htm"><div class="courses_ml2">B.Sc</div></a>
+              <a href="management.htm"><div class="courses_ml3">BBA</div></a>
+            </div>
+          </div></div>
+          <div class="buttonm_spacer"><a href="facilities.htm"><div class="buttonm4">Facilities</div></a></div>
+          <div class="buttonm_spacer"><a href="achievements.htm"><div class="buttonm5">Achievements</div></a></div>
+          <div class="buttonm_spacer"><a href="gallery.htm"><div class="buttonm6">Gallery</div></a></div>
+          <div class="buttonm_spacer"><a href="notice.htm"><div class="buttonm7">Notice</div></a></div>
+          <div class="buttonm_spacer"><a href="contact_us.htm"><div class="buttonm8">Contact&nbspUs</div></a></div>
+
+        </div>
+      </div>
+
+    </button>
+   </div>
+
+  </div>
+
+  <div id="copied" class="hidden"><img src="images/done_icon.png">Copied to Clipboard</div>
+
+  <div class="final_loader_container" id="finalLoader">
+    <div class="final_loader"></div>
+  </div>
+
+
+  <script src="js/admission.js"></script>
+  <script>
+    var n = localStorage.getItem('on_load_counter');
+
+    if (n === null) {
+        n = 0;
+    }
+
+    n++;
+
+    localStorage.setItem("on_load_counter", n);
+
+    $("#CounterVisitor").html(n);
+    $("#CounterVisitor2").html(n);
+    $("#CounterVisitor3").html(n);
+    $("#CounterVisitor4").html(n);
+  </script>
+
+
+ <div id="overlay">
+  <center>
+   <div class="loader"></div>
+   <div class="splash_spacer" style="top:429px;"><div class="loading"><div id="progress"></div></div></div>
+  </center>
+ </div>
+
+ </body>
+</html>
